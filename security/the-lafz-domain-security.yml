@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: thelafz.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 29 22:45:25 2026 GMT
+  hsts: false
+- host: lafz.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 22 12:12:32 2026 GMT
+  hsts: true
+  hsts_max_age: 7889238
+domains:
+- domain: thelafz.com
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: false
+- domain: lafz.com
+  dnssec: false
+  caa:
+  - ;; connection timed out; no servers could be reached
+  spf: false
+  dmarc: false

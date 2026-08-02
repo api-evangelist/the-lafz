@@ -1,0 +1,20 @@
+generated: '2026-07-21'
+method: generated
+source: >-
+  Skills grounded in the provider-published UCP shopping flow (lafz.com/llms.txt,
+  lafz.com/agents.md) and the UCP merchant profile (lafz.com/.well-known/ucp).
+skills:
+- name: lafz-shop
+  file: the-lafz-shop.md
+  description: >-
+    Search the Lafz catalog and complete a buyer-approved purchase via the
+    Shopify UCP shopping MCP server.
+  operations:
+  - search_catalog
+  - create_cart
+  - create_checkout
+  - update_checkout
+  - complete_checkout
+provider_published:
+- file: ../llms/the-lafz-agents.md
+  note: verbatim provider agent guide (/agents.md), mirrored by /llms.txt

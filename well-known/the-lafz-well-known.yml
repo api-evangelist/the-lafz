@@ -1,0 +1,55 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of /.well-known/ paths on Lafz hosts (lafz.com storefront on Shopify; thelafz.com corporate)
+notes: >-
+  lafz.com is the Lafz direct-to-consumer storefront, hosted on Shopify, and
+  exposes real agent-facing surfaces (OIDC customer-account discovery + the
+  Universal Commerce Protocol merchant profile). thelafz.com is the corporate /
+  "halal compliant factories" WordPress site and its /.well-known/ paths are
+  WAF-blocked (403) or soft-404 HTML.
+hosts:
+- host: lafz.com
+  paths:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: the-lafz-openid-configuration.json
+    note: Shopify customer-account OIDC discovery document (issuer shopify.com/authentication/75100487925)
+  - path: /.well-known/ucp
+    status: 200
+    file: the-lafz-ucp.json
+    note: Universal Commerce Protocol (ucp.dev) merchant profile, version 2026-04-08
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /llms.txt
+    status: 200
+    file: ../llms/the-lafz-llms.txt
+    note: agent instructions (mirrors /agents.md)
+  - path: /agents.md
+    status: 200
+    file: ../llms/the-lafz-agents.md
+    note: canonical agent-facing store description
+- host: thelafz.com
+  paths:
+  - path: /.well-known/security.txt
+    status: 403
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 403
+    file: null
+  - path: /.well-known/api-catalog
+    status: 403
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    file: null
+  - path: /llms.txt
+    status: 200
+    file: null
+    note: soft-404 WordPress HTML page, not a real llms.txt

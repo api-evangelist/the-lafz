@@ -1,0 +1,52 @@
+generated: '2026-07-21'
+method: searched
+status: live
+source: >-
+  Discovered via lafz.com/.well-known/ucp and lafz.com/llms.txt. Lafz runs the
+  Shopify-native Universal Commerce Protocol (UCP) shopping MCP server, letting
+  agents search the catalog and drive a buyer-approved checkout.
+name: Lafz Shopping MCP (Shopify UCP)
+description: >-
+  Hosted Model Context Protocol server exposing the Lafz storefront as
+  agent-callable shopping tools via the Universal Commerce Protocol (ucp.dev).
+  Buyer approval is required to complete any payment.
+transport: http
+protocol: mcp
+ucp_version: '2026-04-08'
+supported_ucp_versions:
+- '2026-04-08'
+- '2026-01-23'
+endpoints:
+- url: https://lafz.com/api/ucp/mcp
+  note: storefront-domain UCP MCP endpoint (from /llms.txt)
+- url: https://lafz1.myshopify.com/api/ucp/mcp
+  note: canonical myshopify.com UCP MCP endpoint (from /.well-known/ucp service registry)
+schema: https://ucp.dev/2026-04-08/services/shopping/mcp.openrpc.json
+service: dev.ucp.shopping
+capabilities:
+- dev.ucp.shopping.catalog.search
+- dev.ucp.shopping.catalog.lookup
+- dev.ucp.shopping.cart
+- dev.ucp.shopping.checkout
+- dev.ucp.shopping.fulfillment
+- dev.ucp.shopping.discount
+- dev.ucp.shopping.order
+- dev.shopify.catalog
+# Tool names below are the documented UCP shopping flow from lafz.com/llms.txt;
+# exact JSON schemas are published in the OpenRPC document referenced by `schema`.
+tools:
+- name: search_catalog
+  summary: Find products matching a buyer's intent.
+- name: create_cart
+  summary: Create a cart and add desired items.
+- name: create_checkout
+  summary: Start the purchase flow for a cart.
+- name: update_checkout
+  summary: Set shipping address and method on a checkout.
+- name: complete_checkout
+  summary: Finalize the purchase (buyer must approve payment).
+rules:
+- Checkout requires explicit, contemporaneous human/buyer approval before payment.
+- MCP endpoint is rate-limited per IP; back off on HTTP 429.
+- Pass buyer context (address_country, currency) for accurate pricing/availability.
+alternative_agent_path: https://shop.app/SKILL.md

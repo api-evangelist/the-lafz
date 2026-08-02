@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  Assessed from live discovery documents: lafz.com/.well-known/openid-configuration,
+  lafz.com/.well-known/ucp, and lafz.com/llms.txt.
+standards:
+- id: oidc
+  conforms: true
+  evidence: >-
+    Serves a valid OpenID Connect discovery document via Shopify customer
+    accounts (issuer shopify.com/authentication/75100487925; code flow, PKCE
+    S256, RS256 id_tokens).
+- id: oauth2
+  conforms: true
+  evidence: >-
+    OAuth 2.0 authorization_code + refresh_token + jwt-bearer grants advertised
+    in the OIDC discovery document.
+- id: ucp
+  conforms: true
+  evidence: >-
+    Publishes a Universal Commerce Protocol (ucp.dev) merchant profile at
+    /.well-known/ucp, version 2026-04-08, with dev.ucp.shopping services and
+    cart/checkout/fulfillment/discount/order capabilities over an MCP transport.
+- id: mcp
+  conforms: true
+  evidence: >-
+    Hosted Model Context Protocol server at /api/ucp/mcp (JSON-RPC 2.0 responses
+    observed).
+- id: rfc9457
+  conforms: false
+  evidence: No application/problem+json error surface observed; not applicable to a Shopify storefront.
+- id: fapi
+  conforms: false
+  evidence: No FAPI profile; consumer commerce auth via standard Shopify OIDC.
+- id: fhir
+  conforms: false
+  evidence: Not a healthcare API.
+- id: scim
+  conforms: false
+  evidence: No SCIM provisioning surface.

@@ -1,0 +1,48 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  Derived from lafz.com/llms.txt + lafz.com/agents.md (documented agent-facing
+  conventions) and the Shopify storefront platform the site runs on.
+platform: Shopify
+summary: >-
+  Lafz exposes no bespoke first-party API. Its programmatic surface is the
+  standard Shopify storefront: read-only product/collection JSON endpoints, an
+  agent-commerce path over the Universal Commerce Protocol (UCP) MCP server, and
+  Shopify customer-account OIDC for authenticated access.
+read_only_data:
+  auth_required: false
+  endpoints:
+  - method: GET
+    path: /collections/all
+    returns: all products (HTML)
+  - method: GET
+    path: /products/{handle}.json
+    returns: single product JSON
+  - method: GET
+    path: /collections/{handle}/products.json
+    returns: collection product list JSON
+  - method: GET
+    path: /search?q={query}&type=product
+    returns: product search results
+  - method: GET
+    path: /sitemap.xml
+    returns: store sitemap
+agent_commerce:
+  protocol: Universal Commerce Protocol (ucp.dev)
+  discovery: GET /.well-known/ucp
+  mcp_endpoint: POST /api/ucp/mcp
+  flow:
+  - search_catalog
+  - create_cart
+  - create_checkout
+  - update_checkout
+  - complete_checkout
+authentication:
+  ref: ../authentication/the-lafz-authentication.yml
+  style: OpenID Connect (Shopify customer accounts), PKCE S256
+rate_limiting:
+  signaled_via: HTTP 429
+  guidance: back off on 429 responses; MCP endpoint is rate-limited per IP
+buyer_approval_invariant: >-
+  Payment/checkout completion must have explicit contemporaneous buyer consent;
+  agents unable to obtain it should route through Shop Pay (shop.app/SKILL.md).
