@@ -1,6 +1,7 @@
 generated: '2026-07-21'
 method: searched
-status: live
+status: published
+status_raw: live
 source: >-
   Discovered via lafz.com/.well-known/ucp and lafz.com/llms.txt. Lafz runs the
   Shopify-native Universal Commerce Protocol (UCP) shopping MCP server, letting
