@@ -2,15 +2,12 @@ generated: '2026-07-21'
 method: searched
 status: published
 status_raw: live
-source: >-
-  Discovered via lafz.com/.well-known/ucp and lafz.com/llms.txt. Lafz runs the
-  Shopify-native Universal Commerce Protocol (UCP) shopping MCP server, letting
-  agents search the catalog and drive a buyer-approved checkout.
+source: Discovered via lafz.com/.well-known/ucp and lafz.com/llms.txt. Lafz runs the Shopify-native Universal
+  Commerce Protocol (UCP) shopping MCP server, letting agents search the catalog and drive a buyer-approved
+  checkout.
 name: Lafz Shopping MCP (Shopify UCP)
-description: >-
-  Hosted Model Context Protocol server exposing the Lafz storefront as
-  agent-callable shopping tools via the Universal Commerce Protocol (ucp.dev).
-  Buyer approval is required to complete any payment.
+description: Hosted Model Context Protocol server exposing the Lafz storefront as agent-callable shopping
+  tools via the Universal Commerce Protocol (ucp.dev). Buyer approval is required to complete any payment.
 transport: http
 protocol: mcp
 ucp_version: '2026-04-08'
@@ -33,8 +30,6 @@ capabilities:
 - dev.ucp.shopping.discount
 - dev.ucp.shopping.order
 - dev.shopify.catalog
-# Tool names below are the documented UCP shopping flow from lafz.com/llms.txt;
-# exact JSON schemas are published in the OpenRPC document referenced by `schema`.
 tools:
 - name: search_catalog
   summary: Find products matching a buyer's intent.
@@ -51,3 +46,9 @@ rules:
 - MCP endpoint is rate-limited per IP; back off on HTTP 429.
 - Pass buyer context (address_country, currency) for accurate pricing/availability.
 alternative_agent_path: https://shop.app/SKILL.md
+deployment:
+  mode: remote
+  verified: searched
+  tools: 5
+  checked: '2026-08-12'
+  source: catalog MCP census
