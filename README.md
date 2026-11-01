@@ -64,6 +64,93 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-The Lafz is a company surfaced as a portfolio company of accel and added to the API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the enrichment pipeline.
+Lafz is a halal-certified cosmetics and personal-care brand, founded in 2019 and headquartered in Singapore as part of the Believe PTE FMCG group. It sells hair care, skin care, makeup, a caffeine range, deodorants and fragrance made without alcohol, parabens or animal by-products. The direct-to-consumer storefront at lafz.com runs on Shopify and exposes real agent-facing surfaces: a Shopify customer-account OpenID Connect provider, an /llms.txt agent guide, and a Universal Commerce Protocol (UCP) shopping MCP server for buyer-approved agent-driven checkout. thelafz.com is the corporate "halal compliant factories" site. Added to the API Evangelist network as an Accel portfolio-graph lead and enriched from its live public surfaces.
 
-Backed by: accel — https://thelafz.com
+**Areas:** Company · Consumer · Cosmetics · Personal Care · E-Commerce · Halal · Shopify · Agentic Commerce
+
+## The Lafz on APIs.io
+
+Everything profiled for The Lafz is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/the-lafz/](https://apis.io/providers/the-lafz/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Lafz Storefront (Shopify UCP)](https://apis.io/apis/the-lafz/lafz-storefront-shopify-ucp/) — The Lafz direct-to-consumer storefront on Shopify, with an agent-commerce surface over the Universal Commerce Protocol (UCP) MCP server plus read-only…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [Lafz Shopping MCP (Shopify UCP)](https://apis.io/servers/the-lafz/lafz-shopping-mcp-shopify-ucp/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [The Lafz Authentication](https://apis.io/security/the-lafz/the-lafz-authentication/)
+- [The Lafz Domain Security](https://apis.io/security/the-lafz/the-lafz-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://thelafz.com)
+- [Support](https://lafz.com/pages/contact)
+- [Blog](https://lafz.com/blogs/news)
+- [Privacy policy](https://lafz.com/policies/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 16.4** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.7 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 20.8 |
+| Access clarity | 10.5 |
+
+**Agent readiness 7.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | platform (partial credit) |
+
+**Regulatory alignment 20.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/the-lafz/](https://apis.io/providers/the-lafz/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for The Lafz: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/the-lafz/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
